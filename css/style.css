@@ -1,56 +1,205 @@
 .wrapper {
-    width: 1000px;
-    margin: 0 auto;
-    border: 2px solid #5C4383;
-    padding-left: 5px;
+  width: 100%;
+  min-height: 1000px;
+  margin: 0 auto;
+  padding-top: 10px;
+  background-color: #343434;
 }
 
-.tabs-menu_item {
+/*MENU*/
+
+.nav {
+  width: 720px;
+  height: 50px;
+  background-color: #ccc;
+  margin: 50px auto;
+}
+
+.menu {
+  display: flex;
+  justify-content: space-around;
+}
+
+.sub-menu {
+  background: rgba(2, 2, 2, 0.6);
+  opacity: 0;
+  right: 200px;
+  top: 150px;
+}
+
+.menu__item {
+  font-family: Arial;
+  font-size: 13px;
+  font-weight: 700;
+  line-height: 50px;
+  text-align: center;
+  text-transform: uppercase;
+  width: 140px;
   display: inline-block;
   vertical-align: top;
-  border: 2px solid #5C4383;
-  border-top: 0;
 }
 
-.tabs-menu_link {
+.menu__link {
   display: block;
-  padding: 10px;
-  color: #000;
   text-decoration: none;
-  font-size: 20px;
+  color: #666;
 }
 
-.tabs-menu_link:hover {
+.menu__link:hover {
+  background-color: #343434;
+  color: #fff;
+}
+
+.menu__item:hover > .sub-menu {
+  opacity: 1;
+  position: relative;
+  right: 0;
+  top: 0;
+  z-index: 1;
+}
+
+.sub-menu__link {
+  border-bottom: 1px solid #afafaf;
+  color: #fff;
+  display: block;
   text-decoration: none;
-  background-color: #F7F7F7;
 }
 
-.content-box {
-  min-height: 100px;
-  margin: 15px;
+.sub-menu__link:hover {
+  background: rgba(232, 232, 232, 0.5);
 }
 
-.hide {
-    display: none;
+/*CAROUSEL*/
+.jcarousel-wrap {
+  margin: 0 auto;
+  width: 700px;
+  height: 450px;
+  border: 10px solid #ccc;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.jcarousel {
+  position: relative;
+  overflow: hidden;
+}
+
+.jcarousel-list {
+  width: 20000em;
+  position: relative;
+}
+
+.jcarousel li {
+  float: left;
+}
+
+.jcarousel img {
+  width: 700px;
+}
+
+.arow {
+  font-family: Arial;
+  font-size: 30px;
+  font-weight: 700;
+  color: #FEFEFE;
+  text-shadow: 1px 1px 0 #343434;
+  text-align: center;
+  position: relative;
+  text-decoration: none;
+}
+
+.jcarousel-prev {
+  top: -320px;
+}
+
+.jcarousel-next {
+  top: -320px;
+  left: 677px;
+}
+
+/*CAROUSEL-PAGINATION*/
+.jcarousel-pagination {
+  position: relative;
+  top: -150px;
+  left: 300px;
+}
+
+.jcarousel-pagination a {
+  font-size: 12px;
+  line-height: 14px;
+  min-width: 14px;
+  color: #343434;
+  background: #fff;
+  text-decoration: none;
+  padding: 3px;
+  display: inline-block;
+  border-radius: 14px;
+  text-align: center;
+  margin-right: 2px;
+  opacity: 0.8;
+}
+
+/*CHECKBOX*/
+
+.check {
+  margin-left: 23%;
+  margin-top: 100px;
+}
+
+/*CHECKBOX JQUERY*/
+.check-jquery {
+  display: inline-block;
+  margin-left: 40%;
+}
+
+.jcheck {
+  background: url(../img/checkbox-sprite.png) 0 0 no-repeat;
+  color: #e2e2e2;
+  cursor: pointer;
+  display: block;
+  height: 17px;
+  margin-bottom: 10px;
+  padding-left: 25px;
+  width: 200px;
+}
+
+input {
+  display: none;
+  margin-right: 5px;
 }
 
 .active {
-  background-color: #7BA9D0;
+  background: url(../img/checkbox-sprite.png) 0 -17px no-repeat;
 }
 
-.input-group {
-    margin: 20px 0;
+/*CHECKBOX CSS*/
+.check-css {
+  display: inline-block;
+  margin-left: 100px;
 }
 
-.input-group label {
-    display: inline-block;
-    vertical-align: top;
-    width: 100px;
-    font-size: 16px;
+.box {
+  margin-bottom: 5px;
 }
 
-.help {
-    padding: 3px;
-    margin-left: 10px;
-    box-shadow: 1px 1px 2px 2px #7BA9D0;
+.scheck {
+  color: #e2e2e2;
+  cursor: pointer;
+  height: 17px;
+  width: 200px;
+}
+
+.scheck::before {
+  content: " ";
+  background: url(../img/checkbox-sprite.png);
+  display: inline-block;
+  height: 17px;
+  position: relative;
+  right: 8px;
+  top: 3px;
+  width: 17px;
+}
+
+input[type=checkbox]:checked+.scheck::before {
+  background: url(../img/checkbox-sprite.png) 0 -17px no-repeat;
 }
